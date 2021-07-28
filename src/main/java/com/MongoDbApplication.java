@@ -10,11 +10,7 @@ public class MongoDbApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MongoDbApplication.class, args);
 		
-		System.out.println("changes");
-		System.out.println("changes");
-		System.out.println("changes");
-		System.out.println("changes");
-		System.out.println("changes");
+		
 	}
 
 }
