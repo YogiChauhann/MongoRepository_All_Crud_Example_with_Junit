@@ -70,6 +70,14 @@ class MongoDbApplicationTests {
 		
 		studentRepos.save(student);
 	}
+	
+	@Test
+	public void testFindByName() {
+		List<Student> student = studentRepos.findByName("deepak");
+		System.out.println(">>>>>>>>>>>>>>>"+student);
+		student.forEach(p -> System.out.println(p.getName()));
+	}
+
 
 	
 	
