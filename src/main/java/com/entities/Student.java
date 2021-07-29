@@ -3,6 +3,7 @@ package com.entities;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -20,6 +21,25 @@ public class Student {
 	
 	private List<Subject> subjects;
 	
+	@Transient
+	private double percentage;
+	
+	
+	
+	public double getPercentage() {
+		if(subjects != null && subjects.size() > 0) {
+			int total = 0;
+			for(Subject subject : subjects) {
+				total += subject.getMarksObtained();
+				
+			}
+			return total/subjects.size();
+		}
+		
+		return 0.00;
+	}
+
+
 	public Student() {
 		// TODO Auto-generated constructor stub
 	}
